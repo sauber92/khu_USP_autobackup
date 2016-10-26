@@ -2,18 +2,13 @@
 
 NAME=$(date +%m%d%H%M)
 
-HOST='Your remote server ip'
-USER='Your id'
-PASSWD='Your password'
+HOST='User remote server ip'
+USER='User id'
 FILE=$NAME'.tar'
 
-#tar file 만들기
 tar -cvzf $NAME.tar *
 
-#ftp를 백업
-ftp -n $HOST << END_SCRIPT
-quote USER $USER
-quote PASS $PASSWD
+sftp $USER@$HOST << END_SCRIPT
 put $FILE
 quit
 END_SCRIPT
