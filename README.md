@@ -6,18 +6,39 @@
 ## 1. 기능
 
 이 프로그램은 현재 디렉토리의 있는 모든 내용을 tar를 통해 묶은 후,  
-ftp를 통해 원격 서버로 전송하는 프로그램입니다.  
+sftp를 통해 원격 서버로 전송하는 프로그램입니다.  
 백업 파일의 이름은 "백업시간(month+day+hour+minute).tar" 로 되어있습니다.  
 
 </br>
 ## 2. 사용법
 
-### 2-1. 다운로드 및 권한 부여
+### 2-1. rsa 키 생성
+
+local server에서 rsa 키를 생성 하여, remote server에 등록을 해야 자동 로그인이 됩니다.  
+rsa 키 생성은 local server에서  
+
+```
+id@local:~$ ssh-keygen -t rsa  
+```
+
+라 입력하면 되고, **.ssh/id_rsa.pub** 내용을 확인합니다.
+
+```
+id@local:~$ cat ~/.ssh/id_rsa.pub
+```
+
+이 내용을 복사 후 remote server의 **~/.ssh/authorized_keys** 에 입력하면 됩니다.
+
+```
+id@remote:~$ vi ~/.ssh/authorized_keys
+```
+
+### 2-2. 다운로드 및 권한 부여
 
 backup.sh를 다운 받은 후, shell에서  
 
 ```
-id@server:~$ chmod 755 backup.sh
+id@local:~$ chmod 755 backup.sh
 ```
 
 와 같이 실행권한을 부여합니다.  
@@ -30,7 +51,6 @@ vi editor와 같은 편집기를 사용하여 backup.sh를 수정합니다.
 ```
 HOST='User remote server ip'   
 USER='User id'
-PASSWD='User password'
 ```
 
 위의 변수를 사용자에 맞게 수정하면 됩니다.  
@@ -47,7 +67,7 @@ tar -cvzf $NAME.tar *
 ### 2-3. 실행
 
 ```
-id@server:~$ ./backup.sh
+id@local:~$ ./backup.sh
 ```
 
 와 같이 실행을 하면 됩니다.  
