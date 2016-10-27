@@ -2,8 +2,8 @@
 
 NAME=$(date +%y%m%d)
 
-HOST='celinux2.khu.ac.kr'
-USER='usp33'
+HOST='User remote server ip'
+USER='User id'
 FILE=$NAME'.tar'
 
 MakeTarFile() {
