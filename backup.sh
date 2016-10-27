@@ -1,15 +1,29 @@
 #!/bin/bash
 
-NAME=$(date +%m%d%H%M)
+NAME=$(date +%y%m%d)
 
-HOST='User remote server ip'
-USER='User id'
+HOST='celinux2.khu.ac.kr'
+USER='usp33'
 FILE=$NAME'.tar'
 
-tar -cvzf $NAME.tar *
+MakeTarFile() {
+	tar -cvzf $NAME.tar *
+}
 
-sftp $USER@$HOST << END_SCRIPT
-put $FILE
-quit
+ConnectSFTP() {
+	sftp $USER@$HOST << END_SCRIPT
+	put $FILE
+	quit
 END_SCRIPT
+}
+
+for i in {0..75..3}
+	do
+		MakeTarFile
+		ConnectSFTP
+		rm $FILE
+
+		sleep 3m
+	done
+
 exit 0
