@@ -2,8 +2,8 @@
 
 NAME=$(date +%y%m%d)
 
-HOST='User remote server ip'
-USER='User id'
+HOST='celinux2.khu.ac.kr'
+USER='usp33'
 FILE=$NAME'.tar'
 
 MakeTarFile() {
@@ -11,7 +11,7 @@ MakeTarFile() {
 }
 
 ConnectSFTP() {
-	sftp $USER@$HOST << END_SCRIPT
+	sftp $USER@$HOST 2> /dev/null << END_SCRIPT
 	put $FILE
 	quit
 END_SCRIPT
@@ -19,8 +19,8 @@ END_SCRIPT
 
 for i in {0..75..3}
 	do
-		MakeTarFile
-		ConnectSFTP
+		MakeTarFile > /dev/null
+		ConnectSFTP > /dev/null
 		rm $FILE
 
 		sleep 3m
