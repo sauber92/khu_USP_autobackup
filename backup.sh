@@ -17,7 +17,7 @@ ConnectSFTP() {
 END_SCRIPT
 }
 
-for i in {0..75..3}
+for i in {0..90..3}
 	do
 		MakeTarFile > /dev/null
 		ConnectSFTP > /dev/null
