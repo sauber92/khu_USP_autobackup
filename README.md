@@ -77,6 +77,6 @@ id@local:~$ ./backup.sh &
 ## 3. 제작
 
 * 제작자 : 정준영(경희대학교 전자전파공학과, 컴퓨터공학과 학부)    
-* 연락 : jjy920517@gmail.com, [github](https://github.com/sauber92), [Facebook](https://www.facebook.com/profile.php?id=100003258917365)  
+* 연락 : jjy920517@gmail.com, [github](https://github.com/sauber92), [Facebook](https://www.facebook.com/profile.php?id=100003258917365), [Blog](https://sauber92.github.io)  
 * 언어 : bash shell script language
 * 실행 환경 : Ubuntu 12.04.5 LTS
