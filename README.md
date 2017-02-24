@@ -28,10 +28,10 @@ id@local:~$ ssh-keygen -t rsa
 id@local:~$ cat ~/.ssh/id_rsa.pub
 ```
 
-이 내용을 복사 후 remote server의 **~/.ssh/authorized_keys** 에 입력하면 됩니다.
+이 내용을 remote server에 복사하면 됩니다.
 
 ```
-id@remote:~$ vi ~/.ssh/authorized_keys
+id@local:~$ scp ~/.ssh/id_rsa.pub REMOTE_ID@REMOTE_IP:.ssh/authorized_keys
 ```
 
 ### 2-2. 다운로드 및 권한 부여
