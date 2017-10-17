@@ -11,7 +11,7 @@
 백업 파일의 이름은 "백업시간(year+month+day).tar" 로 되어있습니다.  
 
 </br>
-## 1. 사용법
+## 2. 사용법
 
 ### 2-1. rsa 키 생성
 
@@ -65,7 +65,7 @@ tar -cvzf $NAME.tar *
 `*` 을 지우고 자신이 원하는 파일의 명을 입력하면 됩니다.  
 
 
-### 2-4. 실행
+### 2-4. 실행 
 
 ```
 id@local:~$ ./backup.sh &
@@ -74,7 +74,7 @@ id@local:~$ ./backup.sh &
 와 같이 실행을 하면 됩니다.  
 
 </br>
-## 3. 
+## 3. 제작 
 
 * 제작자 : 정준영(경희대학교 전자전파공학과, 컴퓨터공학과 학부)    
 * 연락 : jjy920517@gmail.com, [github](https://github.com/sauber92), [Facebook](https://www.facebook.com/profile.php?id=100003258917365), [Blog](https://sauber92.github.io)  
